@@ -1,18 +1,18 @@
-export type Label = { readonly text: string }
+export type Label = { readonly text: string };
 
 export enum AccountType {
-  LDAP  = 'LDAP',
-  LOCAL = 'Local'
+  LDAP = 'LDAP',
+  LOCAL = 'Local',
 }
 
 export interface Account {
-  readonly id: string
+  readonly id: string;
 
-  labels: Array<Label>
+  labels: Array<Label>;
 
-  type: AccountType
+  type: AccountType;
 
-  login: string
+  login: string;
 
-  password: string | null
+  password: string | null;
 }
