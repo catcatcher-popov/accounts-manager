@@ -8,7 +8,7 @@
           placeholder="tag1; tag2"
           :onBlurCallback="validateField"
         />
-        <a-alert v-for="err in errors.labels" type="error" :message="err" />
+        <Error v-for="err in errors.labels" type="error" :message="err" />
       </a-col>
 
       <a-col :span="3">
@@ -33,7 +33,7 @@
               :status="errors.login.length ? 'error' : ''"
               @blur="validateField()"
             />
-            <a-alert v-for="err in errors.login" type="error" :message="err" />
+            <Error v-for="err in errors.login" type="error" :message="err" />
           </a-col>
           <a-col v-if="local.type === 'Local'" :span="12">
             <FieldLabel>Пароль</FieldLabel>
@@ -42,7 +42,7 @@
               :status="errors.password.length ? 'error' : ''"
               @blur="validateField()"
             />
-            <a-alert v-for="err in errors.password" type="error" :message="err" />
+            <Error v-for="err in errors.password" type="error" :message="err" />
           </a-col>
         </a-row>
       </a-col>
@@ -61,8 +61,9 @@ import { AccountValidationErrors, validateAccount } from '@/utils/validate-accou
 import type { Account } from '@/types';
 import { AccountType } from '@/types';
 import LabelInput from './LabelInput.vue';
-import { Button } from 'ant-design-vue';
+import { Alert, Button } from 'ant-design-vue';
 import { DeleteOutlined } from '@ant-design/icons-vue';
+import { themeConfig } from '@/App.vue';
 
 const props = defineProps<{ account: Account }>();
 
@@ -102,11 +103,11 @@ function remove() {
 }
 
 const FormCard = styled.div`
-  background: #fff;
-  border: 1px solid #f0f0f0;
+  background: ${() => themeConfig.token.colorBgContainer};
+  border: 1px solid ${() => themeConfig.token.colorBorder};
   padding: 16px;
   margin-bottom: 16px;
-  border-radius: 4px;
+  border-radius: ${() => themeConfig.token.borderRadius};
 `;
 const FieldLabel = styled.label`
   display: block;
@@ -114,7 +115,20 @@ const FieldLabel = styled.label`
   font-weight: 500;
 `;
 const RemoveButton = styled(Button)`
-  margin-top: 1 rem;
+  margin-top: 22px;
   --antd-wave-shadow-color: transparent;
+
+  color: ${() => themeConfig.token.colorError};
+  border-color: ${() => themeConfig.token.colorError};
+
+  &:hover {
+    border-color: ${() => themeConfig.token.colorError} !important;
+    background: ${() => themeConfig.token.colorError};
+    color: #fff !important;
+  }
+`;
+
+const Error = styled(Alert)`
+  margin-top: 8px;
 `;
 </script>

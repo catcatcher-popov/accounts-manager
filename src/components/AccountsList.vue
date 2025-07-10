@@ -1,6 +1,6 @@
 <template>
   <PageHeader>
-    <h2>Учетные записи</h2>
+    <a-typography-title :level="2">Учетные записи</a-typography-title>
     <a-button type="primary" :icon="h(PlusOutlined)" @click="store.addAccount"> Добавить </a-button>
   </PageHeader>
 
@@ -25,5 +25,3 @@ const PageHeader = styled.div`
   margin-bottom: 24px;
 `;
 </script>
-
-<style scoped></style>
