@@ -19,7 +19,7 @@ export const themeConfig = {
     colorBgLayout: '#F0F4F8',
     colorBgContainer: '#FFFFFF',
     colorBorder: '#cde1e6',
-    borderRadius: '4px',
+    borderRadius: '8px',
     colorError: '#EF233C',
   },
 };

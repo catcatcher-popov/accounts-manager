@@ -36,15 +36,9 @@ export const useAccountsStore = defineStore(
     return { accounts, addAccount, updateAccount, removeAccount };
   },
   {
-    // persist-опция сразу работает для setup-store
     persist: {
-      enabled: true,
-      strategies: [
-        {
-          key: 'accounts',
-          storage: localStorage,
-        },
-      ],
+      key: 'accounts',
+      storage: localStorage,
     },
   },
 );
