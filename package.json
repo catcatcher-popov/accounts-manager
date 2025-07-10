@@ -9,14 +9,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "ant-design-vue": "^4.2.6",
+    "@ant-design/icons-vue": "^7.0.1",
+    "ant-design-vue": "^4.0.0-rc.6",
     "nanoid": "^5.1.5",
     "pinia": "^3.0.3",
     "pinia-plugin-persistedstate": "^4.4.1",
     "vue": "^3.5.17",
-    "vue-styled-components": "^1.6.0"
+    "vue3-styled-components": "^1.2.1"
   },
   "devDependencies": {
+    "@types/node": "^24.0.12",
     "@vitejs/plugin-vue": "^6.0.0",
     "@vue/tsconfig": "^0.7.0",
     "typescript": "~5.8.3",

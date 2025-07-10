@@ -2,7 +2,6 @@ import { createApp }      from 'vue'
 import { createPinia }    from 'pinia'
 import piniaPluginPersist from 'pinia-plugin-persistedstate'
 import Antd               from 'ant-design-vue'
-import 'ant-design-vue/dist/antd.css'
 
 import App from './App.vue'
 
@@ -13,5 +12,6 @@ pinia.use(piniaPluginPersist)
 app.use(pinia)
 
 app.use(Antd)
+
 
 app.mount('#app')
