@@ -58,7 +58,7 @@ npm run dev
 ```
 src/
 ├─ components/        # Vue-компоненты (LabelInput, AccountForm, AccountsList)
-├─ stores/            # Pinia-магазин (useAccountsStore)
+├─ stores/            # Pinia-стор (useAccountsStore)
 ├─ types/             # TS-типы (Account, AccountType, Label)
 ├─ utils/             # Утилиты (parseLabels, validateAccount)
 ├─ styles/            # CSS-переменные и глобальные стили
